@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook:ubuntu-22.04
+FROM jupyter/base-notebook:4d70cf8da953
 
 
 USER root
@@ -21,7 +21,6 @@ RUN  wget http://packages.mccode.org/debian/dists/stable/main/binary-amd64/mcsta
 &&   wget http://packages.mccode.org/debian/dists/stable/main/binary-amd64/mcstas-tools-python-mcresplot-3.3-deb64.deb \
 &&   wget http://packages.mccode.org/debian/dists/stable/main/binary-amd64/mcstas-tools-python-mcdisplay-mantid-3.3-deb64.deb \
 &&   wget http://packages.mccode.org/debian/dists/stable/main/binary-amd64/mcstas-mcpl-3.3-deb64.deb \
-&&   wget http://packages.mccode.org/debian/dists/stable/main/binary-amd64/mcstas-ncrystal-3.3-deb64.deb \
 &&   apt update && apt install -y software-properties-common && add-apt-repository ppa:mozillateam/ppa \
 && echo 'Package: *' > /etc/apt/preferences.d/mozilla-firefox \
 && echo Pin: release o=LP-PPA-mozillateam >> /etc/apt/preferences.d/mozilla-firefox \
@@ -65,10 +64,14 @@ ADD . /opt/install
 RUN fix-permissions /opt/install
 
 USER $NB_USER
-RUN cd /opt/install && \
-   conda env update -n base --file environment.yml
 
-COPY McStasScript/configuration.yaml  /opt/conda/lib/python3.11/site-packages/mcstasscript/
+RUN cd /opt/install && \
+   conda env update -n base --file environment.yml --prune
+
+RUN cd /opt/install && \
+   mamba env update -n base --file summer-school.yml
+
+COPY McStasScript/configuration.yaml  /opt/conda/lib/python3.10/site-packages/mcstasscript/
 
 #### Git puller ####
 
@@ -78,4 +81,8 @@ RUN pip install nbgitpuller
 
 # this is for testing whether git puller is working when running container locally
 # RUN jupyter labextension enable --py nbgitpuller
+
+RUN cd /opt/install && \
+   conda init
+
 

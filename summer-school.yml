@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# Copyright (c) 2023 Scipp contributors (https://github.com/scipp)
+
+name: summer-school
+
+channels:
+  - conda-forge
+  - scipp
+  - nodefaults
+
+dependencies:
+  - corner
+  - dynesty
+  - emcee
+  - h5py
+  - ipympl
+  - ipython
+  - ipywidgets
+  - ipykernel
+  - jupyter-book
+  - matplotlib
+  - numpy
+  - pip
+  - plopp==23.08.0
+  - pooch
+  - python==3.10.*
+  - python-graphviz
+  - pythreejs
+  - scipp==23.07.0
+  - scippneutron==23.04.0
+  - scippnexus==23.07.0
+  - scipy
+  - sphinxcontrib-mermaid
+  - tqdm
+  - pip:
+    - easysciencecore
+    - McStasScript

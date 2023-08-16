@@ -9,13 +9,13 @@ This Docker recipe can be used to build the supporting container, e.g.
 
 Build via e.g.
 ```
-podman build . --format=docker -t docker.io/mccode/dmsc-summerschool:1.1
+podman build . --format=docker -t docker.io/mccode/dmsc-summerschool:1.2
 ```
 Will be (manually) uploaded to DockerHub by Peter on changes.
 
 Run via e.g.
 ```
-podman run -p8888:8888 docker.io/mccode/dmsc-summerschool:1.1
+podman run -p8888:8888 docker.io/mccode/dmsc-summerschool:1.2
 ```
 
 ## Credits

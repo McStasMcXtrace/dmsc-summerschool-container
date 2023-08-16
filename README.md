@@ -11,7 +11,6 @@ Build via e.g.
 ```
 podman build . --format=docker -t docker.io/mccode/dmsc-summerschool:1.1
 ```
-
 Will be (manually) uploaded to DockerHub by Peter on changes.
 
 Run via e.g.

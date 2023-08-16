@@ -66,7 +66,7 @@ RUN fix-permissions /opt/install
 USER $NB_USER
 
 RUN cd /opt/install && \
-   mamba env update -n base --file environment.yml --prune && \
+   mamba env update -n base --file environment.yml && \
    mamba init
 
 COPY McStasScript/configuration.yaml  /opt/conda/lib/python3.10/site-packages/mcstasscript/

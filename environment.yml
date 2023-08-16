@@ -5,7 +5,7 @@ channels:
   - conda-forge
   - scipp
   - nodefaults
-  dependencies:
+dependencies:
   - python==3.10.*
   - pip
   - websockify

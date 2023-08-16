@@ -1,18 +1,23 @@
-# McStas Binder from Jupyter Desktop Server
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/McStasMcXtrace/mcstas-binder/master?urlpath=desktop)
+# ESS DMSC Summerschool container
 
-[McStas](http://mcstas.org/) neutron beam-line simulations in a "free" computer at Binder.
+Container with software packages for use in the course https://indico.esss.lu.se/event/3267/
 
-<img src="http://mcstas.org/logo-left.png"> <img src="https://mybinder.org/static/logo.svg?v=fe52c40adc69454ba7536393f76ebd715e5fb75f5feafe16a27c47483eabf3311c14ed9fda905c49915d6dbf369ae68fb855a40dd05489a7b9542a9ee532e92b">
+([JupyterLab](https://jupyter.org), [scipp](https://scipp.github.io),
+[NeXus format](https://www.nexusformat.org), [McStas](https://mcstas.org) and more)
 
-## Usage
+This Docker recipe can be used to build the supporting container, e.g.
 
-Click on the Binder Badge above or https://mybinder.org/v2/gh/McStasMcXtrace/mcstas-binder/master?urlpath=desktop
+Build via e.g.
+```
+podman build . --format=docker -t docker.io/mccode/dmsc-summerschool:1.1
+```
 
-A full desktop, running at Binder for free, will appear in your browser after e.g. a few minutes (be patient).
-The [McStas](http://mcstas.org/) software is available from the __Applications__ menu in group __Education__.
+Will be (manually) uploaded to DockerHub by Peter on changes.
 
-Both the legacy version 2.x and the 'next-generation' 3.x (with revised grammar, compilation and performance effiiency) are available. You are welcome to use MPI clustering to distribute the computations over all CPU cores. There is however no GPU support for the 3.x release.
+Run via e.g.
+```
+podman run -p8888:8888 docker.io/mccode/dmsc-summerschool:1.1
+```
 
 ## Credits
 

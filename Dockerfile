@@ -66,23 +66,8 @@ RUN fix-permissions /opt/install
 USER $NB_USER
 
 RUN cd /opt/install && \
-   conda env update -n base --file environment.yml --prune
-
-RUN cd /opt/install && \
-   mamba env update -n base --file summer-school.yml
+   mamba env update -n base --file environment.yml && \
+   mamba init
 
 COPY McStasScript/configuration.yaml  /opt/conda/lib/python3.10/site-packages/mcstasscript/
-
-#### Git puller ####
-
-RUN pip install nbgitpuller
-# this used to be needed if running an old version of Jupyter Notebook
-# RUN jupyter serverextension enable nbgitpuller --sys-prefix
-
-# this is for testing whether git puller is working when running container locally
-# RUN jupyter labextension enable --py nbgitpuller
-
-RUN cd /opt/install && \
-   conda init
-
 

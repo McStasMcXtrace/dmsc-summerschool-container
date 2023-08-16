@@ -1,11 +1,39 @@
+# SPDX-License-Identifier: BSD-3-Clause
+# Copyright (c) 2023 Scipp contributors (https://github.com/scipp)
+
 channels:
   - conda-forge
+  - scipp
+  - nodefaults
 dependencies:
   - python==3.10.*
-  - jupyter-server-proxy>=1.4
   - pip
   - websockify
   - pyaml
+  - corner
+  - dynesty
+  - emcee
+  - h5py
+  - ipympl
+  - ipython
+  - ipywidgets
+  - ipykernel
+  - jupyter-book
+  - matplotlib
+  - numpy
+  - pip
+  - plopp==23.08.0
+  - pooch
+  - python==3.10.*
+  - python-graphviz
+  - pythreejs
+  - scipp==23.07.0
+  - scippneutron==23.04.0
+  - scippnexus==23.07.0
+  - scipy
+  - sphinxcontrib-mermaid
+  - tqdm
+  - jupyter-server-proxy>=1.4
   - ply
   - matplotlib
   - numpy
@@ -14,9 +42,10 @@ dependencies:
   - pillow
   - pyqtgraph
   - pyqt
-  - nomkl
   - qscintilla2
   - pip:
+      - easysciencecore
       - McStasScript
       - guide_bot
+      - nbgitpuller
       - .

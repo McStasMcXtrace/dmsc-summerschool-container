@@ -43,6 +43,7 @@ dependencies:
   - pyqtgraph
   - pyqt
   - qscintilla2
+  - nexpy
   - pip:
       - easysciencecore
       - McStasScript

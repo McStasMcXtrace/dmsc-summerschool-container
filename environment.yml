@@ -49,4 +49,7 @@ dependencies:
       - McStasScript
       - guide_bot
       - nbgitpuller
+      - sasmodels
+      - sasdata
+      - bumps
       - .
